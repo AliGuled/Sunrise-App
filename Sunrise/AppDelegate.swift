@@ -17,11 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
        
-        
-        let sunTimesService = SunTimesService()
-        sunTimesService.fetchSunTimes()
-        sunTimesService
-        
+        var delegate = ViewController()
+        var sunTimeService = SunTimesService(delegate: delegate)
+        sunTimeService.fetchSunTimes()
+
         return true
     }
 

@@ -62,5 +62,13 @@ extension SunTimes {
 
     }
     
+    func getSunset()->String{
+        return sunset
+    }
+    
+    func getSunrise()->String{
+        return sunrise
+    }
+    
 
 }

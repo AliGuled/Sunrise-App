@@ -10,10 +10,16 @@ import Foundation
 import MapKit
 import CoreLocation
 
-class SunTimesService:NSObject {
+class SunTimesService: NSObject {
     
     var location: Location = Location()
-   
+    
+    var delegate:SunDelegate!
+    
+    init(delegate: SunDelegate) {
+        self.delegate = delegate
+    }
+
     
     func fetchSunTimes() {
         let urlString = "https://api.sunrise-sunset.org/json?lat=45&lng=-93"
@@ -26,7 +32,13 @@ class SunTimesService:NSObject {
                 let decoder = JSONDecoder()
                 let results = try! decoder.decode(Results.self, from: sunTimesData)
                 print(results)
+                
+                //Get data to view controller
+                
+                self.delegate?.timesRead(suntimes: results.results)
+                
             }
+            
         }
         task.resume()
     }

@@ -8,24 +8,35 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SunDelegate {
+   
+    
     
     var sunTimes: Results!
-    var location = SunTimesService()
+    
+    var delegate:  SunDelegate?
 
-    @IBOutlet weak var sunriseLabel: UILabel!
+    @IBOutlet weak var sunriseLabel: UILabel! 
+      
     @IBOutlet weak var sunsetLabel: UILabel!
     
    // var location: SunTimesService = SunTimesService()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if sunriseLabel.text != nil {
-            sunriseLabel.text = sunTimes.results.sunrise
-        }
-        
-        
+        self.title = "?????"
+        navigationController?.navigationBar.prefersLargeTitles = true
 
+    }
+    
+    func timesRead(suntimes: SunTimes) {
+        
+        if delegate != nil {
+            if sunriseLabel.text != nil {
+                
+                sunriseLabel.text = suntimes.sunrise
+                
+            }
+        }
     }
 
 
