@@ -11,9 +11,9 @@ import UIKit
 class ViewController: UIViewController, SunDelegate {
     func locations(locations: String) {
         DispatchQueue.main.async {
-            if self.locationLabel.text  != nil {
+          
                 self.locationLabel.text = locations
-            }
+            
         }
     }
     
@@ -32,6 +32,8 @@ class ViewController: UIViewController, SunDelegate {
         navigationController?.navigationBar.prefersLargeTitles = true
 
     }
+    
+ 
     
     func timesRead(suntimes: SunTimes) {
         

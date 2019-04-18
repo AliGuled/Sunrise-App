@@ -20,8 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         //var delegate = ViewController()
         let sunViewControll = window?.rootViewController as! UIViewController
-        var sunTimeService = SunTimesService(delegate: sunViewControll as! SunDelegate)
+        let sunTimeService = SunTimesService(delegate: sunViewControll as! SunDelegate)
+        _ = Location(delegate: sunViewControll as! SunDelegate)
         sunTimeService.fetchSunTimes()
+       
 
         return true
     }

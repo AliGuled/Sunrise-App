@@ -36,6 +36,7 @@ class SunTimesService: NSObject {
                 //Get data to view controller
                 
                 self.delegate?.timesRead(suntimes: results.results)
+                self.delegate.locations(locations: self.location.city)
                 
             }
             

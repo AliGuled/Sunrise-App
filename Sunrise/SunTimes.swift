@@ -76,5 +76,9 @@ extension SunTimes {
         return sunrise
     }
     
+    func getCity() -> String {
+    return location
+    }
+    
 
 }

@@ -14,7 +14,7 @@ class Location: NSObject, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
   
   //  var geoCoder =  CLGeocoder()
-    var city: String = ""
+    var city: String = "????"
     
     var delegate:SunDelegate!
     
@@ -45,7 +45,7 @@ class Location: NSObject, CLLocationManagerDelegate {
                         self.city = placemark.locality!
                         print(self.city)
                        
-                      //  self.delegate.locations(locations:self.city)
+                        
                     }
                 }
             })
@@ -62,6 +62,9 @@ class Location: NSObject, CLLocationManagerDelegate {
     }
     
     func getCity()->String{
+        self.delegate.locations(locations:self.city)
         return city
     }
+    
+    
 }
