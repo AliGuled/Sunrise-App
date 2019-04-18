@@ -66,15 +66,11 @@
 		180C8A85225B8DE600F6DA83 /* Sunrise */ = {
 			isa = PBXGroup;
 			children = (
-				180C8A86225B8DE600F6DA83 /* AppDelegate.swift */,
-				180C8A88225B8DE600F6DA83 /* ViewController.swift */,
-				18F4CF77225EF1BE002EB1C2 /* SunDelegate.swift */,
-				18D86635225CFE0000444E5C /* Location.swift */,
-				180C8A98225B8EDE00F6DA83 /* SunTimes.swift */,
-				180C8A9A225B8F7F00F6DA83 /* SunTimesService.swift */,
-				180C8A8A225B8DE600F6DA83 /* Main.storyboard */,
-				180C8A8D225B8DE700F6DA83 /* Assets.xcassets */,
-				180C8A8F225B8DE700F6DA83 /* LaunchScreen.storyboard */,
+				18EBE26C2268D371007AEA32 /* Controller */,
+				18EBE26E2268D397007AEA32 /* Protocol */,
+				18EBE26D2268D388007AEA32 /* Model */,
+				18EBE26F2268D3A6007AEA32 /* View */,
+				18EBE2702268D3B5007AEA32 /* Supporting Flies */,
 				180C8A92225B8DE700F6DA83 /* Info.plist */,
 			);
 			path = Sunrise;
@@ -86,6 +82,50 @@
 				18D86633225CFDDC00444E5C /* MapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18EBE26C2268D371007AEA32 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				180C8A88225B8DE600F6DA83 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		18EBE26D2268D388007AEA32 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18D86635225CFE0000444E5C /* Location.swift */,
+				180C8A98225B8EDE00F6DA83 /* SunTimes.swift */,
+				180C8A9A225B8F7F00F6DA83 /* SunTimesService.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18EBE26E2268D397007AEA32 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				18F4CF77225EF1BE002EB1C2 /* SunDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		18EBE26F2268D3A6007AEA32 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				180C8A8A225B8DE600F6DA83 /* Main.storyboard */,
+				180C8A8F225B8DE700F6DA83 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18EBE2702268D3B5007AEA32 /* Supporting Flies */ = {
+			isa = PBXGroup;
+			children = (
+				180C8A86225B8DE600F6DA83 /* AppDelegate.swift */,
+				180C8A8D225B8DE700F6DA83 /* Assets.xcassets */,
+			);
+			path = "Supporting Flies";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
