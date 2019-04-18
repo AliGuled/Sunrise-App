@@ -10,5 +10,5 @@ import Foundation
 
 protocol SunDelegate{
     func timesRead(suntimes:SunTimes) -> Void
-//   todo deal with erros
+    func locations(locations: String) -> Void
 }

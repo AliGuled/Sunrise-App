@@ -16,11 +16,14 @@ struct Results: Decodable {
 struct SunTimes: Decodable {
     let sunrise: String
     let sunset: String
+    let location:  String
+    
 
     //Source: https://stackoverflow.com/questions/49675026/coding-key-difficulties-with-json-swift-4-1
     enum CodingKeys: String, CodingKey {
         case sunrise
         case sunset
+        
 
     }
 }
@@ -49,6 +52,7 @@ extension SunTimes {
         let container = try! decoder.container(keyedBy: CodingKeys.self)
         let sunriseUTCString = try! container.decode(String.self, forKey: CodingKeys.sunrise)
         let sunsetUTCString = try! container.decode(String.self, forKey: CodingKeys.sunset)
+       
     
         
         // convert to timestamp, in UTC
@@ -59,6 +63,8 @@ extension SunTimes {
         //convert UTC timestamp to local time for device
          sunrise = SunTimes.localDateFormatter.string(from: sunriseUTCDate!)
          sunset = SunTimes.localDateFormatter.string(from: sunsetUTCDate!)
+        location = ""
+        
 
     }
     

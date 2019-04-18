@@ -16,6 +16,11 @@ class Location: NSObject, CLLocationManagerDelegate {
   //  var geoCoder =  CLGeocoder()
     var city: String = ""
     
+    var delegate:SunDelegate!
+    
+    init(delegate: SunDelegate) {
+        self.delegate = delegate
+    }
     
     override init() {
         super.init()
@@ -39,7 +44,8 @@ class Location: NSObject, CLLocationManagerDelegate {
                         let placemark = placemarks![0]
                         self.city = placemark.locality!
                         print(self.city)
-                        
+                       
+                      //  self.delegate.locations(locations:self.city)
                     }
                 }
             })

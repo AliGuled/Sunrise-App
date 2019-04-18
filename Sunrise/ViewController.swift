@@ -9,16 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController, SunDelegate {
-   
-    
+    func locations(locations: String) {
+        DispatchQueue.main.async {
+            if self.locationLabel.text  != nil {
+                self.locationLabel.text = locations
+            }
+        }
+    }
     
     var sunTimes: Results!
-    
     var delegate:  SunDelegate?
 
     @IBOutlet weak var sunriseLabel: UILabel! 
       
     @IBOutlet weak var sunsetLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
     
    // var location: SunTimesService = SunTimesService()
     override func viewDidLoad() {
@@ -30,13 +35,13 @@ class ViewController: UIViewController, SunDelegate {
     
     func timesRead(suntimes: SunTimes) {
         
-        if delegate != nil {
-            if sunriseLabel.text != nil {
-                
-                sunriseLabel.text = suntimes.sunrise
-                
-            }
+        DispatchQueue.main.async {
+            self.sunriseLabel!.text = suntimes.sunrise
+            self.sunsetLabel!.text = suntimes.sunset
+
         }
+       
+        
     }
 
 

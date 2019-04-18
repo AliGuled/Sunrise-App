@@ -9,6 +9,7 @@
 import UIKit
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -17,8 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
        
-        var delegate = ViewController()
-        var sunTimeService = SunTimesService(delegate: delegate)
+        //var delegate = ViewController()
+        let sunViewControll = window?.rootViewController as! UIViewController
+        var sunTimeService = SunTimesService(delegate: sunViewControll as! SunDelegate)
         sunTimeService.fetchSunTimes()
 
         return true
