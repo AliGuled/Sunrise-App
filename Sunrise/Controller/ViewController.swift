@@ -9,32 +9,39 @@
 import UIKit
 
 class ViewController: UIViewController, SunDelegate {
+    
+    
+/*
+    Get the current user location
+    In the main thread
+    
+*/
     func locations(locations: String) {
         DispatchQueue.main.async {
-          
-                self.locationLabel.text = locations
+  
+            self.title = locations
+            print("print statement\(locations)")
             
         }
     }
     
-    var sunTimes: Results!
-    var delegate:  SunDelegate?
-
-    @IBOutlet weak var sunriseLabel: UILabel! 
-      
-    @IBOutlet weak var sunsetLabel: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
+    
+    @IBOutlet weak var sunriseLabel: UILabel!  // Sunrise label
+    @IBOutlet weak var sunsetLabel: UILabel!   // Sunset label
+   
     
    // var location: SunTimesService = SunTimesService()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "?????"
+       // self.title = "?????"
         navigationController?.navigationBar.prefersLargeTitles = true
 
     }
     
- 
-    
+    /*
+     Get the user sunrise times
+     Get the user sunset times
+    */
     func timesRead(suntimes: SunTimes) {
         
         DispatchQueue.main.async {

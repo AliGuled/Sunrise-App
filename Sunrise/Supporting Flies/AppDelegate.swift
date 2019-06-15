@@ -19,9 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
        
         //var delegate = ViewController()
-        let sunViewControll = window?.rootViewController as! UIViewController
-        let sunTimeService = SunTimesService(delegate: sunViewControll as! SunDelegate)
-        _ = Location(delegate: sunViewControll as! SunDelegate)
+        let sunViewControll = window?.rootViewController as! UINavigationController
+        let controller = sunViewControll.topViewController as! ViewController
+        let sunTimeService = SunTimesService(delegate: controller as! SunDelegate)
+        
+        _ = Location(delegate: controller as! SunDelegate)
         sunTimeService.fetchSunTimes()
        
 

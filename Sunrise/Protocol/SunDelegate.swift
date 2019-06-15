@@ -9,6 +9,6 @@
 import Foundation
 
 protocol SunDelegate{
-    func timesRead(suntimes:SunTimes) -> Void
-    func locations(locations: String) -> Void
+    func timesRead(suntimes:SunTimes) -> Void //Passes the suntimes to the UI
+    func locations(locations: String) -> Void // Passes the location to the UI
 }

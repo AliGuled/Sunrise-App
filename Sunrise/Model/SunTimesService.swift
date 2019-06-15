@@ -45,10 +45,10 @@ class SunTimesService: NSObject {
     }
     
     
-        func getLocation()->String{
-            return location.getCity()
-    
-        }
+//        func getLocation()->String{
+//            return location.getCity()
+//    
+//        }
 }
     
 
