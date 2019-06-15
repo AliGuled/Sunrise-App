@@ -8,11 +8,13 @@
 
 import Foundation
 
+//Result decodable
 struct Results: Decodable {
     let results: SunTimes
     
 }
 
+//suntimes decodable
 struct SunTimes: Decodable {
     let sunrise: String
     let sunset: String
@@ -23,13 +25,14 @@ struct SunTimes: Decodable {
     enum CodingKeys: String, CodingKey {
         case sunrise
         case sunset
-        
-
+   
     }
 }
 
+//SunTimes extension
 extension SunTimes {
     
+    //UTC date formater
     static let utcDateFormatter: DateFormatter = {
         let df = DateFormatter()
         df.dateFormat = "hh:mm:ss a"
@@ -37,6 +40,7 @@ extension SunTimes {
         return df
     }()
     
+    //Date formater with medium time style
     static let localDateFormatter: DateFormatter = {
         let df = DateFormatter()
         df.calendar = NSCalendar.current
@@ -68,14 +72,17 @@ extension SunTimes {
 
     }
     
+    //Getting the sunset time
     func getSunset()->String{
         return sunset
     }
     
+    //Getting the sunrise time
     func getSunrise()->String{
         return sunrise
     }
     
+    //Getting the location for the sunrise and sunset times
     func getCity() -> String {
     return location
     }
