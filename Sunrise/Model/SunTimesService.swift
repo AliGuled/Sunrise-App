@@ -12,7 +12,7 @@ import CoreLocation
 
 class SunTimesService: NSObject {
     
-    var location: Location = Location()
+    var location: Location = Location() // initializing location
     
     var delegate:SunDelegate!
     
